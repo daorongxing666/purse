@@ -1,5 +1,6 @@
 package com.example.purse_demo.controller;
 
+import com.example.purse_demo.domain.Request;
 import com.example.purse_demo.domain.response.ResponseData;
 import com.example.purse_demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,15 +27,19 @@ public class UserController {
 
     /***
      * @description 用户金额改变
-     * @param uAccount 用户账号
-     * @param money 用户改变金额
-     * @param status 状态 1 - 支付 2 - 退款
+     * @param request 请求封装
      * @return com.example.purse_demo.domain.response.ResponseData
      * @author daorong
      * @date 2023/3/1 11:48
      */
     @PostMapping("/moneyChanged")
-    public ResponseData moneyChanged(@RequestParam String uAccount, @RequestParam Long money, @RequestParam Integer status) {
+    public ResponseData moneyChanged(@RequestBody Request request) {
+        if(request == null) {
+            return ResponseData.buildFailure("400", "输入内容有误，请重试");
+        }
+        String uAccount = request.getUAccount();
+        Long money = request.getMoney();
+        Integer status = request.getStatus();
         return userService.moneyChanged(uAccount, money, status);
     }
 
