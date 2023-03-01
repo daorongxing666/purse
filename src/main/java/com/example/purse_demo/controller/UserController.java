@@ -3,6 +3,7 @@ package com.example.purse_demo.controller;
 import com.example.purse_demo.domain.Request;
 import com.example.purse_demo.domain.response.ResponseData;
 import com.example.purse_demo.service.UserService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,6 +41,9 @@ public class UserController {
         String uAccount = request.getUAccount();
         Long money = request.getMoney();
         Integer status = request.getStatus();
+        if(StringUtils.isAnyBlank(uAccount, money.toString(), status.toString())) {
+            return ResponseData.buildFailure("400", "输入内容不能为空");
+        }
         return userService.moneyChanged(uAccount, money, status);
     }
 
