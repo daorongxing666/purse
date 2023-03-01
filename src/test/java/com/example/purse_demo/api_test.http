@@ -1,0 +1,33 @@
+GET http://localhost:80/api/item?id=99
+Accept: application/json
+
+###
+### 查询用户剩余金额
+GET http://localhost:8080/money/zhangsan
+
+
+### 用户消费100元
+POST http://localhost:8080/money/moneyChanged
+Content-Type: application/json
+
+{
+  "userAccount": "zhangsan",
+  "money": 100,
+  "status": 1
+}
+
+
+### 用户退款20元
+POST http://localhost:8080/money/moneyChanged
+Content-Type: application/json
+
+{
+  "userAccount": "zhangsan",
+  "money": 20,
+  "status": 2
+}
+
+<> 2023-03-01T171609.200.json
+
+### 查询用户钱包金额变动明细
+GET http://localhost:8080/history/zhangsan
