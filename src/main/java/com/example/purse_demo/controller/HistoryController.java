@@ -26,13 +26,13 @@ public class HistoryController {
     
     /***
      * @description 查询用户钱包金额变动明细
-     * @param uAccount 用户账号
+     * @param userAccount 用户账号
      * @return com.example.purse_demo.domain.response.ResponseData
      * @author daorong
      * @date 2023/3/1 14:08
     */
-    @GetMapping("/{uAccount}")
-    public ResponseData getHistory(@PathVariable String uAccount){
-        return historyService.getHistory(uAccount);
+    @GetMapping("/{userAccount}")
+    public ResponseData getHistory(@PathVariable String userAccount){
+        return historyService.getHistory(userAccount);
     }
 }

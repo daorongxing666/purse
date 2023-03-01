@@ -13,10 +13,13 @@ import java.io.Serializable;
  */
 @Data
 public class Request implements Serializable {
+
+
+    private static final long serialVersionUID = 574016633049394897L;
     /**
      * 交易用户
      */
-    private String uAccount;
+    private String userAccount;
     /**
      * 交易金额
      */

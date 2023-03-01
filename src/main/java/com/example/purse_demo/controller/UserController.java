@@ -16,14 +16,14 @@ public class UserController {
 
     /***
      * @description 查询用户余额
-     * @param uAccount 账户名称
+     * @param userAccount 账户名称
      * @return com.example.purse_demo.domain.response.ResponseData
      * @author daorong
      * @date 2023/3/1 11:25
      */
-    @GetMapping("/{uAccount}")
-    public ResponseData getRemain(@PathVariable String uAccount) {
-        return userService.getRemain(uAccount);
+    @GetMapping("/{userAccount}")
+    public ResponseData getRemain(@PathVariable String userAccount) {
+        return userService.getRemain(userAccount);
     }
 
     /***
@@ -38,13 +38,13 @@ public class UserController {
         if(request == null) {
             return ResponseData.buildFailure("400", "输入内容有误，请重试");
         }
-        String uAccount = request.getUAccount();
+        String userAccount = request.getUserAccount();
         Long money = request.getMoney();
         Integer status = request.getStatus();
-        if(StringUtils.isAnyBlank(uAccount, money.toString(), status.toString())) {
+        if(StringUtils.isAnyBlank(userAccount, money.toString(), status.toString())) {
             return ResponseData.buildFailure("400", "输入内容不能为空");
         }
-        return userService.moneyChanged(uAccount, money, status);
+        return userService.moneyChanged(userAccount, money, status);
     }
 
 }

@@ -5,7 +5,7 @@ create schema purse;
 create table purse.user
 (
     id          bigint auto_increment comment '用户id',
-    u_account   varchar(20)                         not null comment '用户账号',
+    user_account   varchar(20)                         not null comment '用户账号',
     money       bigint    default 0                 not null comment '用户余额',
     version     tinyint   default 1                 not null comment '版本号',
     deleted     int       default 0                 not null comment '是否删除（0-存在，1-删除）',

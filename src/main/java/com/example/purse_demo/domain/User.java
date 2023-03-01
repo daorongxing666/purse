@@ -22,8 +22,8 @@ public class User implements Serializable {
     /**
      * 用户账号
      */
-    @TableField(value = "u_account")
-    private String uAccount;
+    @TableField(value = "user_account")
+    private String userAccount;
 
     /**
      * 用户余额

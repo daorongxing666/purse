@@ -13,10 +13,10 @@ public interface HistoryService extends IService<History> {
 
     /***
      * @description 查询用户钱包金额变动明细
-     * @param uAccount 用户账号
+     * @param userAccount 用户账号
      * @return com.example.purse_demo.domain.response.ResponseData
      * @author daorong
      * @date 2023/3/1 14:13
      */
-    ResponseData getHistory(String uAccount);
+    ResponseData getHistory(String userAccount);
 }

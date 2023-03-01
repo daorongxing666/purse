@@ -6,7 +6,7 @@
 
     <resultMap id="BaseResultMap" type="com.example.purse_demo.domain.User">
             <id property="id" column="id" jdbcType="INTEGER"/>
-            <result property="uAccount" column="u_account" jdbcType="VARCHAR"/>
+            <result property="userAccount" column="user_account" jdbcType="VARCHAR"/>
             <result property="money" column="money" jdbcType="BIGINT"/>
             <result property="version" column="version" jdbcType="TINYINT"/>
             <result property="deleted" column="deleted" jdbcType="INTEGER"/>
