@@ -22,7 +22,7 @@ http://localhost:8080/money/moneyChanged
 ```json
 // 表单json
 {
-  "uAccount": "zhangsan",
+  "userAccount": "zhangsan",
   "money": 100,
   "status": 1
 }
@@ -49,7 +49,7 @@ http://localhost:8080/money/moneyChanged
 ```json
 // 表单json
 {
-  "uAccount": "zhangsan",
+  "userAccount": "zhangsan",
   "money": 20,
   "status": 2
 }
